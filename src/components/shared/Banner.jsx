@@ -21,7 +21,7 @@ const Banner = () => {
             <div className='overflow-x-hidden' data-aos="zoom-in">
               <div className="relative mx-auto overflow-hidden rounded-xl bg-blue-gray-500 bg-clip-border text-white shadow-lg shadow-blue-gray-500/40">
                 <img
-                  src="https://i.ibb.co/7C959sG/1000-F-113945306-W7y-DGxo-Z2-XGdni-Hs-Sy-Tut-QR5a0x29k1-W.jpg"
+                  src="https://i.ibb.co/n3wDJHS/photo-1543353071-10c8ba85a904.webp"
                   alt="img-blur-shadow" className="w-[1600px] h-[600px]" />
               </div>
               <div>

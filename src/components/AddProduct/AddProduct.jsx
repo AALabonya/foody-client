@@ -1,20 +1,23 @@
+import useAuth from "../../hooks/useAuth";
 
 const AddProduct = () => {
- 
+ const {user }= useAuth()
+
     const handleSubmit = (event) => {
         event.preventDefault();
     
         const formData = {
           foodName: event.target.foodName.value,
-          foodImage: event.target.foodImage.files[0],
+          foodImage: event.target.foodImage.value,
           foodQuantity: event.target.foodQuantity.value,
           pickupLocation: event.target.pickupLocation.value,
-          expiredDateTime: event.target.expiredDateTime.value,
+          expiredDate: event.target.expiredDate.value,
+          expiredTime: event.target.expiredTime.value,
           additionalNotes: event.target.additionalNotes.value,
           foodStatus: event.target.foodStatus.value,
-          donatorImage: event.target.donatorImage.files[0],
-          donatorName: event.target.donatorName.value,
-          donatorEmail: event.target.donatorEmail.value,
+            donatorImage: user.photoURL || "",
+            donatorName: user.displayName || "",
+            donatorEmail: user.email || "",
         };
     
         console.log('Form Data:', formData);
@@ -24,7 +27,7 @@ const AddProduct = () => {
   return (
     <div className="bg-gray-200 p-4">
     <div className="bg-white rounded-md shadow-lg max-w-xl mx-auto p-4">
-      <h2 className="text-2xl font-semibold mb-4">Add Food</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-center">Add Food</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="foodName" className="block text-sm font-medium text-gray-700">
@@ -44,11 +47,11 @@ const AddProduct = () => {
             Food Image:
           </label>
           <input
-            type="file"
+            type="text" 
             id="foodImage"
             name="foodImage"
-            accept="image/*"
             required
+            className="mt-1 p-2 rounded-md border w-full focus:outline-none focus:ring focus:border-blue-300"
           />
         </div>
 
@@ -83,13 +86,25 @@ const AddProduct = () => {
             Expired Date/Time:
           </label>
           <input
-            type="datetime-local"
-            id="expiredDateTime"
-            name="expiredDateTime"
+            type="date"
+            id="expiredDate"
+            name="expiredDate"
             required
           />
         </div>
-
+        <div className="mb-4">
+            <label htmlFor="expiredTime" className="block text-sm font-medium text-gray-700">
+              Expired Time:
+            </label>
+            <input
+              type="time"
+              id="expiredTime"
+              name="expiredTime"
+              className="mt-1 p-2 rounded-md border w-full focus:outline-none focus:ring focus:border-blue-300"
+            
+              required
+            />
+          </div>
         <div className="mb-4">
           <label htmlFor="additionalNotes" className="block text-sm font-medium text-gray-700">
             Additional Notes:
@@ -116,15 +131,15 @@ const AddProduct = () => {
           </select>
         </div>
 
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <label htmlFor="donatorImage" className="block text-sm font-medium text-gray-700">
             Donator Image:
           </label>
           <input
-            type="file"
+            type="text"
             id="donatorImage"
-            name="donatorImage"
-            accept="image/*"
+           defaultValue={user.photoURL}
+            className="mt-1 p-2 rounded-md border w-full focus:outline-none focus:ring focus:border-blue-300"
             required
           />
         </div>
@@ -136,7 +151,7 @@ const AddProduct = () => {
           <input
             type="text"
             id="donatorName"
-            name="donatorName"
+            defaultValue={user.displayName}
             className="mt-1 p-2 rounded-md border w-full focus:outline-none focus:ring focus:border-blue-300"
             required
           />
@@ -149,11 +164,11 @@ const AddProduct = () => {
           <input
             type="email"
             id="donatorEmail"
-            name="donatorEmail"
+            defaultValue={user.email}
             className="mt-1 p-2 rounded-md border w-full focus:outline-none focus:ring focus:border-blue-300"
             required
           />
-        </div>
+        </div> */}
 
         <button
           type="submit"
