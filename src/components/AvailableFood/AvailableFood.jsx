@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 const AvailableFood = () => {
     return (
@@ -35,7 +36,7 @@ const AvailableFood = () => {
 			</div>
 		</div>
 		<div className="space-y-3 text-center">
-			<button className="btn">View Details Button</button>
+			<Link to="/food/:id"><button className="btn">View Details Button</button></Link>
 		</div>
 	</div>
 </div>
