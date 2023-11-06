@@ -9,7 +9,7 @@
       "Add Button": "https://example.com/add_to_cart",
       "Donator Image": "https://example.com/donator_images/johndoe.jpg",
       "Donator Name": "John Doe",
-      "Donator Email": "john.doe@example.com",
+      "Donator Email":"https://i.ibb.co/DfHL58g/doctor4.jpg",
       "Food Status": "available"
     },
     {
@@ -18,11 +18,11 @@
       "Food Quantity": "22",
       "Pickup Location": "456 Elm Street, Townsville",
       "Expired Date/Time": "2023-12-30T19:30:00",
-      "Additional Notes": "Pepperoni and mushroom pizza",
+      "Additional Notes": "Chicken rice bowl is delicious",
       "Add Button": "https://example.com/add_to_cart",
       "Donator Image": "https://example.com/donator_images/janedoe.jpg",
       "Donator Name": "Jane Doe",
-      "Donator Email": "jane.doe@example.com",
+      "Donator Email": "https://i.ibb.co/9qM1Jyv/doctor2.webp",
       "Food Status": "available"
     },
     {

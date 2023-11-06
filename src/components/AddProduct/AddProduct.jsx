@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import useAuth from '../../hooks/useAuth';
+import axios from 'axios';
 
 const AddProduct = () => {
   const { user } = useAuth();
@@ -8,10 +9,9 @@ const AddProduct = () => {
   // Initialize state variables for form fields
   const [foodName, setFoodName] = useState('');
   const [foodImage, setFoodImage] = useState('');
-  const [foodQuantity, setFoodQuantity] = useState(0);
+  const [foodQuantity, setFoodQuantity] = useState();
   const [pickupLocation, setPickupLocation] = useState('');
   const [expiredDate, setExpiredDate] = useState('');
-  const [expiredTime, setExpiredTime] = useState('');
   const [additionalNotes, setAdditionalNotes] = useState('');
   const [foodStatus, setFoodStatus] = useState('available');
 
@@ -19,13 +19,12 @@ const AddProduct = () => {
     event.preventDefault();
 
     // Access form values from state variables
-    const formData = {
+    const foodData = {
       foodName,
       foodImage,
       foodQuantity,
       pickupLocation,
       expiredDate,
-      expiredTime,
       additionalNotes,
       foodStatus,
       donatorImage: user.photoURL || '',
@@ -33,16 +32,18 @@ const AddProduct = () => {
       donatorEmail: user.email || '',
     };
 
-    console.log('Form Data:', formData);
+    console.log('Form Data:', foodData);
     // You can send this data to your backend or perform other actions.
+    axios.post("http://localhost:5000/foodAdd", foodData)
+    .then(res=>console.log(res.data))
   };
 
   return (
-    <div className="bg-gray-200 p-4">
-      <div className="bg-white rounded-md shadow-lg max-w-xl mx-auto p-4">
+    <div className="bg-gray-200 p-12">
+      <div className="bg-white rounded-md shadow-lg max-w-xl mx-auto p-3 md:p-20 lg:p-20">
         <h2 className="text-2xl font-semibold mb-4 text-center">Add Food</h2>
         <form onSubmit={handleSubmit}>
-          <div className="mb-4">
+          <div className="">
             <label htmlFor="foodName" className="block text-sm font-medium text-gray-700">
               Food Name:
             </label>
@@ -57,7 +58,7 @@ const AddProduct = () => {
             />
           </div>
 
-          <div className="mb-4">
+          <div className="mb-2">
             <label htmlFor="foodImage" className="block text-sm font-medium text-gray-700">
               Food Image:
             </label>
@@ -72,7 +73,7 @@ const AddProduct = () => {
             />
           </div>
 
-          <div className="mb-4">
+          <div className="mb-2">
             <label htmlFor="foodQuantity" className="block text-sm font-medium text-gray-700">
               Food Quantity:
             </label>
@@ -87,7 +88,7 @@ const AddProduct = () => {
             />
           </div>
 
-          <div className="mb-4">
+          <div className="mb-2">
             <label htmlFor="pickupLocation" className="block text-sm font-medium text-gray-700">
               Pickup Location:
             </label>
@@ -102,11 +103,12 @@ const AddProduct = () => {
             />
           </div>
 
-          <div className="mb-4">
+          <div className="mb-2">
             <label htmlFor="expiredDate" className="block text-sm font-medium text-gray-700">
               Expired Date:
             </label>
-            <input
+            <input 
+            className="mt-1 p-2 rounded-md border w-full focus:outline-none focus:ring focus:border-blue-300"
               type="date"
               id="expiredDate"
               name="expiredDate"
@@ -116,22 +118,7 @@ const AddProduct = () => {
             />
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="expiredTime" className="block text-sm font-medium text-gray-700">
-              Expired Time:
-            </label>
-            <input
-              type="time"
-              id="expiredTime"
-              name="expiredTime"
-              value={expiredTime}
-              onChange={(e) => setExpiredTime(e.target.value)}
-              className="mt-1 p-2 rounded-md border w-full focus:outline-none focus:ring focus:border-blue-300"
-              required
-            />
-          </div>
-
-          <div className="mb-4">
+          <div className="mb-2">
             <label htmlFor="additionalNotes" className="block text-sm font-medium text-gray-700">
               Additional Notes:
             </label>
@@ -141,11 +128,11 @@ const AddProduct = () => {
               value={additionalNotes}
               onChange={(e) => setAdditionalNotes(e.target.value)}
               className="mt-1 p-2 rounded-md border w-full focus:outline-none focus:ring focus:border-blue-300"
-              rows="4"
+              rows="2"
             ></textarea>
           </div>
 
-          <div className="mb-4">
+          <div className="mb-2">
             <label htmlFor="foodStatus" className="block text-sm font-medium text-gray-700">
               Food Status:
             </label>

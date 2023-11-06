@@ -1,45 +1,26 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import FoodCard from "./FoodCard";
 
 const AvailableFood = () => {
+   const[availableFood , setAvailableFood] =useState([])
+
+   useEffect(()=>{
+	axios.get("http://localhost:5000/getFood")
+	.then(res =>setAvailableFood(res.data))
+   },[])
+//   console.log(availableFood);
+
+     
     return (
         <div>
-            <div className="rounded-md shadow-md sm:w-96 dark:bg-gray-900 dark:text-gray-100">
-	<div className="flex items-center justify-between p-3">
-		<div className="flex items-center space-x-2">
-			<img src="https://source.unsplash.com/50x50/?portrait" alt="" className="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-700" />
-			<div className="-space-y-1">
-				<h2 className="text-sm font-semibold leadi">leroy_jenkins72</h2>
-				
-			</div>
+        <h1 className="text-3xl text-center font-bold mb-5">Available Food</h1>
+		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+			{
+				availableFood.map(food =><FoodCard key={food._id} food={food}></FoodCard>)
+			}
 		</div>
-		<h1>Expired Date:</h1>
-	</div>
-	<img src="https://source.unsplash.com/301x301/?random" alt="" className="object-cover object-center w-full h-72 dark:bg-gray-500" />
-	<div className="p-3">
-		<div className="flex items-center justify-between">
-			<div className="flex items-center space-x-3">
-				<h1>FoodName:</h1>
-				
-			</div>
-            
-			<button type="button" title="Bookmark post" className="flex items-center justify-center">
-				status
-			</button>
-		</div>
-        <div>AdditionalNotes</div>
-		<div className="flex flex-wrap items-center pt-3 pb-1">
-			<div className="flex items-center space-x-2">
-				<div className="flex -space-x-1">
-					
-				</div>
-				
-			</div>
-		</div>
-		<div className="space-y-3 text-center">
-			<Link to="/food/:id"><button className="btn">View Details Button</button></Link>
-		</div>
-	</div>
-</div>
         </div>
     );
 };
