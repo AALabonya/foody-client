@@ -17,7 +17,7 @@ const Navbar = () => {
     <li className="rounded-lg"> <NavLink to="/">Home</NavLink></li>
     <li className=" rounded-lg"> <NavLink to="/availableFoods">Available Foods</NavLink></li>
     <li className=" rounded-lg"> <NavLink to="/addProduct">Add Food</NavLink></li>
-    <li className=" rounded-lg"> <NavLink to="/register">Manage My Foods</NavLink></li>
+    <li className=" rounded-lg"> <NavLink to="/manageMyFood">Manage My Foods</NavLink></li>
     <li className=" rounded-lg"> <NavLink to="/myCart">My Food Request</NavLink></li>
 
   </>
