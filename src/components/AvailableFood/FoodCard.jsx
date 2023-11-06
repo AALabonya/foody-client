@@ -1,8 +1,13 @@
+/* eslint-disable react/jsx-key */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
 
 const FoodCard = ({food}) => {
-      const{foodName,
+      const{
+        _id,
+        foodName,
 		foodImage,
 		foodQuantity,
 		pickupLocation,
@@ -52,7 +57,7 @@ const FoodCard = ({food}) => {
 			</div>
 		</div>
 		<div className="space-y-3 text-center">
-			<Link to="/food/:id"><button className="btn btn-outline">View Details Button</button></Link>
+			<Link to={`/food/${_id}`}><button className="btn btn-outline">View Details Button</button></Link>
 		</div>
 	</div>
 </div>
