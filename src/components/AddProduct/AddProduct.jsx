@@ -1,10 +1,10 @@
-
 import { useState } from 'react';
-import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
+import { useContext } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const AddProduct = () => {
-  const { user } = useAuth();
+  const { user } = useContext(AuthContext)
 
   // Initialize state variables for form fields
   const [foodName, setFoodName] = useState('');

@@ -4,12 +4,12 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import {useState } from "react";
-
-import useAuth from "../../hooks/useAuth";
 import Swal from 'sweetalert2'
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Login = () => {
-    const { signIn, googleSignIn } =useAuth()
+    const { signIn, googleSignIn } =useContext(AuthContext)
 
     const [showLogInError, setShowLogInError] = useState("")
 

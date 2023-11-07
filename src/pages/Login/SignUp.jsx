@@ -1,13 +1,15 @@
 
+import { useContext } from 'react';
 import { useState } from 'react';
-import useAuth from '../../hooks/useAuth';
+
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const SignUp = () => {
     const [errorHandle, setErrorHandle] = useState("")
 
-    const { createUser, logOut, updateUser } = useAuth()
+    const { createUser, logOut, updateUser } = useContext(AuthContext)
 
     const navigate = useNavigate()
 
@@ -74,7 +76,9 @@ const SignUp = () => {
                                 </div>
                                 <div>
                                     <label htmlFor="password" className="block mb-2 text-sm font-medium text-white dark:text-white">Your password</label>
-                                    <input type="password" name="password" id="password" placeholder="Password" className="bg-gray-50 border input border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                                    <input type="password" name="password" id="password" placeholder="Password" className="bg-gray-50 border input
+                                     border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
+                                      dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
                                 </div>
                                 <div className="flex items-start">
                                     <div className="flex items-start">
