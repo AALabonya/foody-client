@@ -61,8 +61,8 @@ const AvailableFood = () => {
 					>
 						<option value="" className="disabled">
 							choose one</option>
-						<option>ascending date</option>
-						<option>descending date</option>
+						<option value="asc">ascending date</option>
+						<option value="desc">descending date</option>
 					</select>
 				</div>
 			</div>

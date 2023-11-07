@@ -1,30 +1,39 @@
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
 import useAxios from "../../hooks/useAxios";
 import FeatureCard from "./FeatureCard";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const FeaturedFood = () => {
  
     const axios = useAxios()
 
-    const featureFood = async()=>{
-        const res= await axios.get("/getFood?sortField=foodQuantity&sortOrder=desc&limit=6")
-        return res
-    }
-      const {data: foods, isLoading,isError} = useQuery({
-        queryKey:[ "foods" ],
-        queryFn: featureFood
-      })
+    const uri ="/featuredFood"
+const[featuresData, setFeature]= useState()
 
-      console.log(foods?.data);
+useEffect(()=>{
+  axios.get(uri)
+  .then(res=>setFeature(res.data))
+},[axios])
+    // const featureFood = async()=>{
+    //     const res= await axios.get("/featuredFood")
+    //     return res
+    // }
+    //   const {data: foods, isLoading,isError} = useQuery({
+    //     queryKey:[ "foods" ],
+    //     queryFn: featureFood
+    //   })
 
+    //   console.log(foods?.data);
+ console.log(featuresData);
+      
     return (
         <div>
             <h1 className="text-center font-bold text-4xl mt-10 ">Featured Foods</h1>
             <h3 className="text-center font-bold text-2xl mb-5">Sharing love, one meal at a time.</h3>
             <div className="grid md:grid-cols-3 gap-4">
                 {
-                  foods?.data.map(feature => <FeatureCard key={feature._id} feature={feature}></FeatureCard>)  
+                 featuresData?.slice(0,6).map(feature => <FeatureCard key={feature._id} feature={feature}></FeatureCard>)  
                 }
 
             </div>

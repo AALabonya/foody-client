@@ -4,6 +4,7 @@
 import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import axios from "axios";
 
 const SingleFoodDetails = () => {
   const singleData = useLoaderData()
@@ -22,6 +23,7 @@ const SingleFoodDetails = () => {
 
   const [additionalNotes, setAdditionalNotes] = useState('');
   const [donationMoney, setDonationMoney] = useState('');
+  const [requestDate] = useState(new Date().toLocaleString());
   // const {
   //   _id,
   //   foodName,
@@ -58,11 +60,11 @@ const SingleFoodDetails = () => {
     e.preventDefault();
 
     const newForm = {
-      foodName, foodImage, pickupLocation, expiredDate, donatorName, donatorEmail, UserEmail: user?.email, additionalNotes, donationMoney
+      foodName, foodImage, pickupLocation, expiredDate, donatorName, donatorEmail, UserEmail: user?.email, RequesterName: user?.displayName,additionalNotes, donationMoney, requestDate
     }
-  
-  console.log(newForm);
-  console.log('foodName:', foodName);
+       console.log(newForm);
+     axios.post("http://localhost:5000/requestFood", newForm)
+    .then(res=>console.log(res.data))
 
   };
 
@@ -82,8 +84,6 @@ const SingleFoodDetails = () => {
             </div>
             {/* The button to open modal */}
             <label htmlFor="my_modal_7" className="btn ">Request for Food</label>
-
-
             <input type="checkbox" id="my_modal_7" className="modal-toggle" />
             <div className="modal">
               <div className="modal-box">
@@ -141,10 +141,9 @@ const SingleFoodDetails = () => {
                         <span className="label-text">Request Date</span>
                       </label>
                       <label className="input-group">
-                        <input type="time" readOnly className="w-full input input-bordered" />
+                        <input type="text" value={requestDate} readOnly className="w-full input input-bordered" />
                       </label>
                     </div>
-
                   </div>
                   <div className="md:flex gap-10 mb-1">
                     <div className="form-control md:w-1/2">

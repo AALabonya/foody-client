@@ -8,6 +8,7 @@ import AddProduct from "../components/AddProduct/AddProduct";
 import AvailableFood from "../components/AvailableFood/AvailableFood";
 import SingleFoodDetails from "../components/SingleFoodDetails/SingleFoodDetails";
 import ManageMyFood from "../components/ManageMyFood/ManageMyFood";
+import MyFoodRequest from "../components/MyFoodRequest/MyFoodRequest";
 
 
 const Router = createBrowserRouter([
@@ -44,6 +45,10 @@ const Router = createBrowserRouter([
             {
                 path:"/manageMyFood",
                 element:<ManageMyFood/>
+            },
+            {
+                path:"/myFoodRequest",
+                element:<MyFoodRequest/>
             }
         ]
     }

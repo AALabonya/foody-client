@@ -2,7 +2,7 @@
     {
       "Food Name": "Beef Sunday Roast",
       "Food Image": "https://www.themealdb.com/images/media/meals/ssrrrs1503664277.jpg",
-      "Food Quantity": "20",
+      "Food Quantity": 20,
       "Pickup Location": "123 Main Street, Cityville",
       "Expired Date/Time": "2023-12-31T18:00:00",
       "Additional Notes": "Vegetarian pasta with tomato sauce",
@@ -15,7 +15,7 @@
     {
       "Food Name": "Chicken rice bowl",
       "Food Image": "https://www.themealdb.com/images/media/meals/1529444113.jpg",
-      "Food Quantity": "22",
+      "Food Quantity": 22,
       "Pickup Location": "456 Elm Street, Townsville",
       "Expired Date/Time": "2023-12-30T19:30:00",
       "Additional Notes": "Chicken rice bowl is delicious",
@@ -28,7 +28,7 @@
     {
         "Food Name": "Beef Wellington",
         "Food Image": "https://www.themealdb.com/images/media/meals/vvpprx1487325699.jpg",
-        "Food Quantity": "3 ",
+        "Food Quantity": 3 ,
         "Pickup Location": "789 Oak Street, Foodtown",
         "Expired Date/Time": "2023-12-15T20:00:00",
         "Additional Notes": "Beef tacos with extra salsa",
@@ -41,7 +41,7 @@
       {
         "Food Name": "Pasta",
         "Food Image": "https://www.themealdb.com/images/category/pasta.png",
-        "Food Quantity": "1 large bowl",
+        "Food Quantity": 4,
         "Pickup Location": "456 Pine Avenue, Fruitville",
         "Expired Date/Time": "2023-12-20T12:30:00",
         "Additional Notes": "Fresh mixed fruit salad",
@@ -53,7 +53,7 @@
       },{
         "Food Name": "Beef Brisket Pot Roast",
         "Food Image": "https://www.themealdb.com/images/media/meals/ursuup1487348423.jpg",
-        "Food Quantity": "2 servings",
+        "Food Quantity": 4,
         "Pickup Location": "123 Elm Street, Foodville",
         "Expired Date/Time": "2023-12-15T19:30:00",
         "Additional Notes": "Classic spaghetti with meatballs",
@@ -66,7 +66,7 @@
       {
         "Food Name": "Broccoli & Stilton soup",
         "Food Image": "https://www.themealdb.com/images/media/meals/tvvxpv1511191952.jpg",
-        "Food Quantity": "5",
+        "Food Quantity": 5,
         "Pickup Location": "456 Oak Avenue, Pizzatown",
         "Expired Date/Time": "2023-12-20T18:00:00",
         "Additional Notes": "Vegetarian pizza with extra cheese",
@@ -78,7 +78,7 @@
       },{
         "Food Name": "Beef stroganoff",
         "Food Image": "https://www.themealdb.com/images/media/meals/svprys1511176755.jpg",
-        "Food Quantity": "1 burger",
+        "Food Quantity": 7,
         "Pickup Location": "123 Elm Street, Burger Town",
         "Expired Date/Time": "2023-11-30T19:00:00",
         "Additional Notes": "Classic cheeseburger with fries",
@@ -91,7 +91,7 @@
       {
         "Food Name": "Mix Salad",
         "Food Image": "https://www.themealdb.com/images/category/side.png",
-        "Food Quantity": "5",
+        "Food Quantity": 8,
         "Pickup Location": "456 Oak Avenue, Pizzaville",
         "Expired Date/Time": "2023-12-10T18:30:00",
         "Additional Notes": "Traditional Margherita pizza with fresh basil",
@@ -104,7 +104,7 @@
       {
         "Food Name": "Vegetarian",
         "Food Image": "https://www.themealdb.com/images/category/vegetarian.png",
-        "Food Quantity": "1 tray",
+        "Food Quantity": 10,
         "Pickup Location": "123 Oak Street, Foodville",
         "Expired Date/Time": "2023-12-15T18:30:00",
         "Additional Notes": "Classic beef lasagna with layers of cheese",
