@@ -67,7 +67,7 @@ const Login = () => {
     return (
         <div>
 
-            <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/X4CVCRZ/fashion1.webp)'}}>
+            <div className="hero min-h-screen">
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-xl">
@@ -75,7 +75,7 @@ const Login = () => {
 
                             <div className="w-full max-w-sm bg-transparent border border-gray-200 rounded-lg shadow sm:p-6 md:p-12 dark:bg-gray-800 dark:border-gray-700">
                                 <form onSubmit={handleLoginForm} className="space-y-6">
-                                    <h5 className="text-2xl font-bold text-center bg-pink-600 rounded-lg py-2 md:py-4 lg:py-4 w-full text-white dark:text-white">SignIn</h5>
+                                    <h5 className="text-2xl font-bold text-center bg-cyan-800 rounded-lg py-2 md:py-4 lg:py-4 w-full text-white dark:text-white">SignIn</h5>
 
                                     <div>
                                         <label htmlFor="email" className="block mb-2 text-sm font-medium text-white-900 dark:text-white">Your email</label>
@@ -86,12 +86,12 @@ const Login = () => {
                                         <input type="password" name="password" id="password" placeholder="Password" className="bg-gray-50 border input border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
                                     </div>
 
-                                    <button type="submit" className="w-full text-white bg-pink-700 hover:bg-pink-900 focus:ring-4 focus:outline-none rounded-lg py-2">Login</button>
+                                    <button type="submit" className="w-full text-white bg-cyan-800  hover:bg-cyan-800  focus:ring-4 focus:outline-none rounded-lg py-2">Login</button>
                                     <div className="text-sm text-white font-bold dark:text-gray-300 ">
                                         New here?  Please <Link to="/signUp" className="text-pink-700 text-lg hover:underline dark:text-blue-500 ">SignUp</Link>
 
                                     </div>
-                                    <Link> <p className="text-center mt-5"><button onClick={handleGoogle} className="btn border-blue-500 font-bold text-pink-500"><FaGoogle className="text-blue-500"></FaGoogle> Login with Google</button></p></Link>
+                                    <Link> <p className="text-center mt-5 text-white"><button onClick={handleGoogle} className="btn border-blue-500 font-bold bg-cyan-800 text-white "><FaGoogle className="text-white"></FaGoogle> Login with Google</button></p></Link>
 
                                 </form>
                                 {

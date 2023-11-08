@@ -38,20 +38,20 @@ const AvailableFood = () => {
 	return (
 		<div><div className="w-full dark:bg-gray-500 bg-[url('https://i.ibb.co/hML1zzk/fresh-vegetable-salad-with-grilled-chicken-breast-tomatoes-cucumbers-radish-mix-lettuce-leaves-chick.jpg')]">
 			<div className="container flex flex-col flex-wrap content-center justify-center p-4 py-20 mx-auto md:p-10">
-				<h1 className="text-5xl antialiased font-semibold leadi text-center dark:text-gray-100">Get Our Updates</h1>
-				<p className="pt-2 pb-8 text-xl antialiased text-center dark:text-gray-100">Find out about events and other news</p>
+				<h1 className="text-5xl antialiased font-semibold leadi text-center dark:text-gray-100">Get Our Foods</h1>
+				<p className="pt-2 pb-8 text-xl antialiased text-center dark:text-gray-100">Find out Which you want</p>
 			</div>
 		</div>
 			<h1 className="text-3xl text-center font-bold mt-5">Available Food</h1>
 			<h3 className="text-xl text-center font-bold mb-5">Sharing love, one meal at a time.</h3>
 			<div className="md:flex w-full justify-between">
-				<div className="items-center flex justify-center md:w-1/2">
+				<div className=" md:w-1/2">
 					<div>
 						<input type="text" onChange={(e) => setSearch(e.target.value)} placeholder="Search here..."
-							className="border" />
+							className="border p-1 rounded-md" />
 						<button
 							type="button"
-							onClick={() => setCheck(search)} className=" bg-teal-300">Search</button>
+							onClick={() => setCheck(search)} className=" bg-teal-300 p-1 rounded-md">Search</button>
 					</div>
 				</div>
 				<div>
@@ -59,7 +59,7 @@ const AvailableFood = () => {
 						className="input my-2"
 						onChange={(e) => setDate(e.target.value)}
 					>
-						<option value="" className="disabled">
+						<option value="" className="border border-black font-bold">
 							choose one</option>
 						<option value="asc">ascending date</option>
 						<option value="desc">descending date</option>

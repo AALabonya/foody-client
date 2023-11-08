@@ -5,9 +5,12 @@ import { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const SingleFoodDetails = () => {
   const singleData = useLoaderData()
+
+  console.log(singleData);
   const { user } = useContext(AuthContext)
 
   const email = user?.email
@@ -37,25 +40,6 @@ const SingleFoodDetails = () => {
   //   donatorName,
   //   donatorEmail } = singleData || {}
 
-  // calculation 
-  // const currentDate =new Date()
-  // const expiredDateValue = singleData.expiredDate.split("-")
-  // const expiredDateField = new Date(
-  //   parseInt(expiredDateValue[0]),
-  //   parseInt(expiredDateValue[1]) -1,
-  //   parseInt(expiredDateValue[2])
-  // )
-
-  // const totalTime = expiredDateField - currentDate
-
-  //  if(totalTime > 0){
-  //   const days = Math.floor(totalTime / (1000 * 60 * 60 * 24));
-  //   const hours = Math.floor((totalTime % (1000*60*60*24))/(1000*60*60))
-  //   const minutes = Math.floor((totalTime % (1000*60*60))/(1000*60))
-  //    setRemainingTime(`${days} days, ${hours}hours,${minutes} minutes.` )
-  // }else{
-  //   setRemainingTime("Expired")
-  // }
   const handleFoodSubmit = (e) => {
     e.preventDefault();
 
@@ -64,7 +48,13 @@ const SingleFoodDetails = () => {
     }
        console.log(newForm);
      axios.post("http://localhost:5000/requestFood", newForm)
-    .then(res=>console.log(res.data))
+    .then(res=>{
+      console.log(res.data)
+      if(res.data.insertedId){
+        Swal.fire("Requested!", "Your food has been Requested.", "success")
+      }
+      
+    })
 
   };
 

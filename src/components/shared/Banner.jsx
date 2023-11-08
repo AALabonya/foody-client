@@ -30,12 +30,13 @@ const Banner = () => {
                     data-aos-offset="300"
                     data-aos-easing="ease-in-sine" data-aos-duration="1000" className='absolute top-60 overflow-x-hidden'>
   
-                    <h1 className='font-bold text-white text-xl lg:text-8xl mb-2'>Welcome To Our Yoga and and Fitness Retreats center.</h1>
-                    <p className='font-semibold overflow-x-hidden text-white text-xs lg:text-xl'>You are welcome to visit our center where every person is treated with high attention</p>
-                    <div className=" max-w-[520px] md:rounded-full p-2 bg-cyan-950 text-white ml-10">
-            <marquee direction="right">
-            <Link to="/" className="mr-12">I can be a React component,
-          multiple React components, or just some text.....</Link>
+                    <h1 className='font-bold text-cyan-950 text-xl lg:text-8xl mb-2'>Welcome To Foody</h1>
+                    <p className='font-semibold overflow-x-hidden text-cyan-950 text-xs lg:text-xl mb-2'>Sharing love, one meal at a time. In every culture around the world, shared meals with friends <br/>
+                    or family are a way of connecting with each other</p>
+                    <div className=" max-w-[550px] md:rounded-full p-3 bg-cyan-950 text-white ml-24">
+            <marquee direction="right items-center">
+            <Link to="/" className="mr-16">Beef Sunday Roast,Chicken rice bowl,Beef Wellington,Pasta,
+            Beef Brisket Pot Roast,Broccoli & Stilton soup,Beef stroganoff,Mix Salad,Vegetarian,Breakfast</Link>
             </marquee>
           </div>
                   </div>
@@ -55,8 +56,9 @@ const Banner = () => {
               <div>
                 <div className='text-center flex justify-center '>
                   <div className='absolute top-60'>
-                    <h1 className='font-bold text-white lg:text-5xl mb-2'> A complete Workout from head to toes.</h1>
-                    <p className='font-semibold text-white lg:text-xl'>If you need advice on therapies , please contact use and we will be happy to assist you.</p>
+                  <h1 className='font-bold text-cyan-950 text-xl lg:text-8xl mb-2'>Welcome To Foody</h1>
+                    <p className='font-semibold overflow-x-hidden text-cyan-950 text-xs lg:text-xl mb-2'>Sharing love, one meal at a time. In every culture around the world, shared meals with friends <br/>
+                    or family are a way of connecting with each other</p>
                   </div>
                 </div>
               </div>
@@ -72,8 +74,9 @@ const Banner = () => {
               <div>
                 <div className='text-center flex justify-center '>
                   <div className='absolute top-60'>
-                    <h1 className='font-bold text-white lg:text-5xl mb-2'> Keeping Your Mind in Best Condition.</h1>
-                    <p className='font-semibold text-white lg:text-xl'>We offer diverse health programs that included physical exercise, nutrition plans, yoga and meditation classes.</p>
+                  <h1 className='font-bold text-cyan-950 text-xl lg:text-8xl mb-2'>Welcome To Foody</h1>
+                    <p className='font-semibold overflow-x-hidden text-cyan-950 text-xs lg:text-xl mb-2'>Sharing love, one meal at a time. In every culture around the world, shared meals with friends <br/>
+                    or family are a way of connecting with each other</p>
                   </div>
                 </div>
               </div>
@@ -89,8 +92,9 @@ const Banner = () => {
               <div>
                 <div className='text-center flex justify-center '>
                   <div className='absolute top-60'>
-                    <h1 className='font-bold text-white lg:text-5xl mb-2'>We Welcome everyone in our community.</h1>
-                    <p className='font-semibold text-white lg:text-xl'>If you need advice on therapies , please contact use and we will be happy to assist you.</p>
+                  <h1 className='font-bold text-cyan-950 text-xl lg:text-8xl mb-2'>Welcome To Foody</h1>
+                    <p className='font-semibold overflow-x-hidden text-cyan-950 text-xs lg:text-xl mb-2'>Sharing love, one meal at a time. In every culture around the world, shared meals with friends <br/>
+                    or family are a way of connecting with each other</p>
                   </div>
                 </div>
               </div>
@@ -106,8 +110,9 @@ const Banner = () => {
               <div>
                 <div className='text-center flex justify-center'>
                   <div className='absolute top-60'>
-                    <h1 className='font-bold text-white lg:text-5xl mb-2'>All types of activities for everyone.</h1>
-                    <p className='font-semibold text-white lg:text-xl'>If you need advice on therapies , please contact use and we will be happy to assist you.</p>
+                  <h1 className='font-bold text-cyan-950 text-xl lg:text-8xl mb-2'>Welcome To Foody</h1>
+                    <p className='font-semibold overflow-x-hidden text-cyan-950 text-xs lg:text-xl mb-2'>Sharing love, one meal at a time. In every culture around the world, shared meals with friends <br/>
+                    or family are a way of connecting with each other</p>
                   </div>
                 </div>
               </div>
@@ -125,9 +130,9 @@ const Banner = () => {
   
                   <div className='absolute top-60'>
   
-                    <h1 className='font-bold text-white lg:text-5xl mb-2'>Join our classes for quality yoga practice .</h1>
-  
-                    <p className='font-semibold text-white text-xl'>If you need advice on therapies , please contact use and we will be happy to assist you.</p>
+                  <h1 className='font-bold text-cyan-950 text-xl lg:text-8xl mb-2'>Welcome To Foody</h1>
+                    <p className='font-semibold overflow-x-hidden text-cyan-950 text-xs lg:text-xl mb-2'>Sharing love, one meal at a time. In every culture around the world, shared meals with friends <br/>
+                    or family are a way of connecting with each other</p>
   
                   </div>
                 </div>

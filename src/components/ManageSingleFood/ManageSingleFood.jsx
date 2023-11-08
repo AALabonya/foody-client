@@ -6,6 +6,7 @@ import { useState } from "react";
 
 const ManageSingleFood = () => {
 	const manageSingleFood = useLoaderData()
+	
 	const [singleData, setSingleData] = useState(manageSingleFood)
 	const axios = useAxios()
 	

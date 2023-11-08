@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddProduct = () => {
   const { user } = useContext(AuthContext)
@@ -31,11 +32,16 @@ const AddProduct = () => {
       donatorName: user.displayName || '',
       donatorEmail: user.email || '',
     };
-
+    // insertedId
     console.log('Form Data:', foodData);
     // You can send this data to your backend or perform other actions.
     axios.post("http://localhost:5000/foodAdd", foodData)
-    .then(res=>console.log(res.data))
+    .then(res=>{
+      console.log(res.data)
+      if(res.data.insertedId){
+        Swal.fire("Posted!", "Your food has been Posted.", "success")
+      }
+    })
   };
 
   return (

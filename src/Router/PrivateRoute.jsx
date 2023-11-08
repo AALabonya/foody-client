@@ -2,7 +2,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { Navigate, useLocation } from "react-router-dom";
-import useAuth from "../hooks/useAuth";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 

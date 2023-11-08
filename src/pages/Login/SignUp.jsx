@@ -61,7 +61,7 @@ const SignUp = () => {
 
                         <div className="w-full max-w-sm  bg-transparent border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
                             <form onSubmit={handleRegister} className="space-y-6">
-                                <h5 className="text-2xl font-bold text-center bg-pink-600 rounded-lg py-4 w-full text-white dark:text-white">Create an Account</h5>
+                                <h5 className="text-2xl font-bold text-center bg-cyan-900  rounded-lg py-4 w-full text-white dark:text-white">Create an Account</h5>
                                 <div>
                                     <label htmlFor="email" className="block mb-2 text-sm font-medium text-white dark:text-white">Your Name</label>
                                     <input type="text" name="name" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Name" required />
@@ -95,7 +95,7 @@ const SignUp = () => {
                                     </div>
                                     <a href="#" className="text-sm text-white hover:underline dark:text-blue-500 ml-12">Forget Password?</a>
                                 </div>
-                                <button type="submit" className="w-full text-white bg-pink-700 hover:bg-pink-900 focus:ring-4 focus:outline-none rounded-lg py-2">Register</button>
+                                <button type="submit" className="w-full text-white bg-cyan-900 hover:bg-cyan-900 focus:ring-4 focus:outline-none rounded-lg py-2">Register</button>
                                 <div className="text-sm font-medium text-white dark:text-gray-300">
                                     Have an account?  Please <Link to="/login" className="text-pink-600 font-bold text-xl hover:underline dark:text-white">Login</Link>
                                 </div>
