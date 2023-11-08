@@ -12,15 +12,15 @@ const SingleFoodDetails = () => {
 
   const email = user?.email
 
-  const [remainingTime, setRemainingTime] = useState('')
+
 
   const [foodName, setFoodName] = useState(singleData.foodName);
   const [foodImage, setFoodImage] = useState(singleData.foodImage);
+  const [requestFoodId, setRequestFoodId] = useState(singleData._id)
   const [pickupLocation, setPickupLocation] = useState(singleData.pickupLocation);
   const [donatorName, setDonatorName] = useState(singleData.donatorName);
   const [donatorEmail, setDonatorEmail] = useState(singleData.donatorEmail);
   const [expiredDate, setExpiredDate] = useState(singleData.expiredDate);
-
   const [additionalNotes, setAdditionalNotes] = useState('');
   const [donationMoney, setDonationMoney] = useState('');
   const [requestDate] = useState(new Date().toLocaleString());
@@ -60,7 +60,7 @@ const SingleFoodDetails = () => {
     e.preventDefault();
 
     const newForm = {
-      foodName, foodImage, pickupLocation, expiredDate, donatorName, donatorEmail, UserEmail: user?.email, RequesterName: user?.displayName,additionalNotes, donationMoney, requestDate
+      foodName, foodImage,requestFoodId, pickupLocation, expiredDate, donatorName, donatorEmail, UserEmail: user?.email, RequesterName: user?.displayName, RequesterImage: user?.photoURL, additionalNotes, donationMoney, requestDate
     }
        console.log(newForm);
      axios.post("http://localhost:5000/requestFood", newForm)
@@ -97,9 +97,9 @@ const SingleFoodDetails = () => {
                       <label className="input-group">
                         <input type="text" onChange={(e) => setFoodName(e.target.value)} value={foodName} placeholder="Name" className="w-full input input-bordered" />
                       </label>
-                      <span className="label-text mt-4">Food Id :</span>
+                      <span className="label-text mt-4">Request Food Id :</span>
                       <label className="input-group">
-                        <input type="text" name="_id" readOnly defaultValue={singleData._id} placeholder="Name" className="w-full input input-bordered" />
+                        <input type="text" name="_id" readOnly onChange={(e) => setRequestFoodId(e.target.value)} value={requestFoodId} placeholder="Name" className="w-full input input-bordered" />
                       </label>
                     </div>
 
