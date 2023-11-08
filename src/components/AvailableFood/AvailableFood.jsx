@@ -21,14 +21,13 @@ const AvailableFood = () => {
 		const res = await axios.get(`/getFood?sortField=expiredDate&sortOrder=${date}&foodName=${check}`)
 		return res
 	}
-	console.log(getFoods);
 
 	const { data: food, isLoading, isError } = useQuery({
 		queryKey: ["foods", date, check],
 		queryFn: getFoods,
 	})
 
-	console.log(food?.data);
+
 
 	if (isLoading) {
 		return <Loading></Loading>
@@ -42,7 +41,7 @@ const AvailableFood = () => {
 			<div className="w-full dark:bg-gray-500 bg-[url('https://i.ibb.co/hML1zzk/fresh-vegetable-salad-with-grilled-chicken-breast-tomatoes-cucumbers-radish-mix-lettuce-leaves-chick.jpg')]">
 			<div className="container flex flex-col flex-wrap content-center justify-center p-4 py-20 mx-auto md:p-10">
 				<h1 className="text-5xl antialiased font-semibold leadi text-center dark:text-gray-100">Get Our Foods</h1>
-				<p className="pt-2 pb-8 text-xl antialiased text-center dark:text-gray-100">Find out Which you want</p>
+				<p className="pt-2 pb-8 text-xl antialiased text-center dark:text-gray-100">Find out Which one you want</p>
 			</div>
 		</div>
 			<h1 className="text-3xl text-center font-bold mt-5">Available Food</h1>

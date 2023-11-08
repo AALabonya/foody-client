@@ -42,7 +42,7 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/food/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/getFood/${params.id}`, { credentials: "include" }),
+                loader: ({ params }) => fetch(`https://assignment-11-server-site-project.vercel.app/getFood/${params.id}`, { credentials: "include" }),
                 element: <SingleFoodDetails />
             },
             {
@@ -55,14 +55,14 @@ const Router = createBrowserRouter([
             },
             {
                 path: "/manageSingleFood/:id",
-                element: <ManageSingleFood />,
-                loader: ({ params }) => fetch(`http://localhost:5000/requestFood/${params.id}`)
+                element: <PrivateRoute><ManageSingleFood/></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://assignment-11-server-site-project.vercel.app/requestFood/${params.id}`)
 
             },
             {
                 path: "/updateManageFood/:_id",
-                element: <UpdateTheFood />,
-                loader:({params})=> fetch(`http://localhost:5000/getFoods/${params._id}`)
+                element:<PrivateRoute><UpdateTheFood /></PrivateRoute>,
+                loader:({params})=> fetch(`https://assignment-11-server-site-project.vercel.app/getFoods/${params._id}`)
             }
         ]
     }

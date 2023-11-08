@@ -8,7 +8,7 @@ import { Helmet } from "react-helmet-async";
 const MyFoodRequest = () => {
     const{user} = useContext(AuthContext)
     const axios =useAxios()
-    const [myRequest, setMyRequest]=useState([])
+    const [myRequest, setMyRequest]=useState(axios)
 
     useEffect(()=>{
         axios.get(`/getUserRequestFood?email=${user?.email}`)
@@ -30,9 +30,9 @@ const MyFoodRequest = () => {
                 axios.delete(`/requestCancel/${id}`)
                 .then(res=>{
                     if(res.data.deletedCount > 0){
-                        const filterData =myRequest.filter(request=> request._id === id)
-                        setMyRequest(filterData)
-                        Swal.fire({
+                        const filterData =myRequest.filter(request=> request._id == id)
+                           setMyRequest(filterData)
+                            Swal.fire({
                             title: "Delivered!",
                             text: "Your file has been update.",
                             icon: "success"

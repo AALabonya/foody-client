@@ -56,12 +56,12 @@ useEffect(()=>{
         //if user exists then issue a token
         if(currentUser){
          
-          axios.post("http://localhost:5000/jwt", loggedUser, {withCredentials: true})
+          axios.post("https://assignment-11-server-site-project.vercel.app/jwt", loggedUser, {withCredentials: true})
           .then(res =>{
             console.log("token response", res.data);
           })
         }else{
-          axios.post("http://localhost:5000/logout", loggedUser, {withCredentials: true})
+          axios.post("https://assignment-11-server-site-project.vercel.app/logout", loggedUser, {withCredentials: true})
           .then(res=>{
             console.log("logout", res.data);
           })

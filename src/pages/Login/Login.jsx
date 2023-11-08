@@ -31,12 +31,8 @@ const Login = () => {
                             title: "Good job!",
                             text: "You clicked the button!",
                             icon: "success"
-                        })
-
-
-
-                        // swal("Good job!", "Login Successful!", "success"
-                        // ) && navigate(location?.state ? location.state : "/")
+                        }) && navigate(location?.state ? location.state : "/")
+                        
                     )
                 }
             })
@@ -56,9 +52,8 @@ const Login = () => {
                     title: "Good job!",
                     text: "You clicked the button!",
                     icon: "success"
-                })
-                // swal("Good job!", "Google login Successful!!", "success");
-                navigate(location?.state ? location.state : "/")
+                })&& navigate(location?.state ? location.state : "/")
+               
             })
             .catch(error => {
                 console.error(error)

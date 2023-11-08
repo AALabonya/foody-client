@@ -33,10 +33,7 @@ const AddProduct = () => {
       donatorName: user.displayName || '',
       donatorEmail: user.email || '',
     };
-    // insertedId
-    console.log('Form Data:', foodData);
-    // You can send this data to your backend or perform other actions.
-    axios.post("http://localhost:5000/foodAdd", foodData)
+    axios.post("https://assignment-11-server-site-project.vercel.app/foodAdd", foodData)
     .then(res=>{
       console.log(res.data)
       if(res.data.insertedId){

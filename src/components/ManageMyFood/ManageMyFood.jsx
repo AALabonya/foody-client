@@ -27,7 +27,6 @@ const ManageMyFood = () => {
       .then(res => setMyFood(res.data))
   }, [axios,email])
 
-  console.log(myFood);
 
 
   const COLUMNS = [
@@ -95,7 +94,7 @@ const ManageMyFood = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         // const foodId= _id.original._id
-        axios.delete(`http://localhost:5000/getFood/${_id}`)
+        axios.delete(`https://assignment-11-server-site-project.vercel.app/getFood/${_id}`)
           .then((res) => {
             console.log(res.data);
             if (res.data.deletedCount > 0) {

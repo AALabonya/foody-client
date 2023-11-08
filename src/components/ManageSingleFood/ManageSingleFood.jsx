@@ -20,7 +20,7 @@ const ManageSingleFood = () => {
 			showCancelButton: true,
 			confirmButtonColor: "#3085d6",
 			cancelButtonColor: "#d33",
-			confirmButtonText: "Yes, delete it!"
+			confirmButtonText: "Yes, Deliver!"
 		}).then((result) => {
 			if (result.isConfirmed) {
 				const delivered = { isDelivered: true }
@@ -96,9 +96,9 @@ const ManageSingleFood = () => {
 										<td className="p-3">
 											{
 												single.isDelivered ?
-													<button className="px-3 py-1 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900">Delivered </button>
+													<button className="px-3 py-1 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900 bg-green-500">Delivered </button>
 													:
-													<button onClick={() => handlePending(single._id)} className="px-3 py-1 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900">
+													<button onClick={() => handlePending(single._id)} className="px-3 py-1 font-semibold rounded-md bg-orange-500 dark:bg-violet-400 dark:text-gray-900">
 														Pending
 													</button>
 											}

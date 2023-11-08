@@ -11,7 +11,6 @@ import { Helmet } from "react-helmet-async";
 const SingleFoodDetails = () => {
   const singleData = useLoaderData()
 
-  console.log(singleData);
   const { user } = useContext(AuthContext)
 
   const email = user?.email
@@ -28,29 +27,15 @@ const SingleFoodDetails = () => {
   const [additionalNotes, setAdditionalNotes] = useState('');
   const [donationMoney, setDonationMoney] = useState('');
   const [requestDate] = useState(new Date().toLocaleString());
-  // const {
-  //   _id,
-  //   foodName,
-  //   foodImage,
-  //   foodQuantity,
-  //   pickupLocation,
-  //   expiredDate,
-  //   additionalNotes,
-  //   foodStatus,
-  //   donatorImage,
-  //   donatorName,
-  //   donatorEmail } = singleData || {}
-
+ 
   const handleFoodSubmit = (e) => {
     e.preventDefault();
 
     const newForm = {
       foodName, foodImage,requestFoodId, pickupLocation, expiredDate, donatorName, donatorEmail, UserEmail: user?.email, RequesterName: user?.displayName, RequesterImage: user?.photoURL, additionalNotes, donationMoney, requestDate
     }
-       console.log(newForm);
-     axios.post("http://localhost:5000/requestFood", newForm)
+     axios.post("https://assignment-11-server-site-project.vercel.app/requestFood", newForm)
     .then(res=>{
-      console.log(res.data)
       if(res.data.insertedId){
         Swal.fire("Requested!", "Your food has been Requested.", "success")
       }
