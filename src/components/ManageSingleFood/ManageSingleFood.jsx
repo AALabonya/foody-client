@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import useAxios from "../../hooks/useAxios";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const ManageSingleFood = () => {
 	const manageSingleFood = useLoaderData()
@@ -48,6 +49,7 @@ const ManageSingleFood = () => {
 
 	return (
 		<div>
+			<Helmet><title>Foody | Manage Single Food</title></Helmet>
 			<div className="container p-2 mx-auto sm:p-4 dark:text-gray-100">
 				<h2 className=" text-2xl font-semibold leadi text-center mb-10"> Manage Single Food</h2>
 				{
@@ -94,7 +96,7 @@ const ManageSingleFood = () => {
 										<td className="p-3">
 											{
 												single.isDelivered ?
-													<button className="px-3 py-1 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900">Delivered</button>
+													<button className="px-3 py-1 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900">Delivered </button>
 													:
 													<button onClick={() => handlePending(single._id)} className="px-3 py-1 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900">
 														Pending

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const SignUp = () => {
     const [errorHandle, setErrorHandle] = useState("")
@@ -53,6 +54,7 @@ const SignUp = () => {
 
     return (
         <div>
+            <Helmet><title>Foody | SignUp</title></Helmet>
         <div className="hero min-h-screen">
             <div className="hero-overlay bg-opacity-60"></div>
             <div className="hero-content text-center text-neutral-content">

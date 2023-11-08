@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const AddProduct = () => {
   const { user } = useContext(AuthContext)
@@ -46,6 +47,7 @@ const AddProduct = () => {
 
   return (
     <div className="bg-gray-200 p-12">
+      <Helmet><title>Foody | Add Product</title></Helmet>
       <div className="bg-white rounded-md shadow-lg max-w-xl mx-auto p-3 md:p-20 lg:p-20">
         <h2 className="text-2xl font-semibold mb-4 text-center">Add Food</h2>
         <form onSubmit={handleSubmit}>

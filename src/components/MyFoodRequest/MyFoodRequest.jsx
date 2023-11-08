@@ -2,16 +2,18 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import useAxios from "../../hooks/useAxios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const MyFoodRequest = () => {
     const{user} = useContext(AuthContext)
     const axios =useAxios()
     const [myRequest, setMyRequest]=useState([])
+
     useEffect(()=>{
         axios.get(`/getUserRequestFood?email=${user?.email}`)
         .then(res=>setMyRequest(res.data))
-    },[axios,user?.email ])
+    },[axios,user?.email])
 
 
     const handleCancel=(id)=>{
@@ -37,11 +39,13 @@ const MyFoodRequest = () => {
                         })
                     }
                 })
+				window.location.reload();
             }
         })
     }
     return (
         <div>
+			<Helmet><title>Foody | My food Request</title></Helmet>
            <div className="container p-2 mx-auto sm:p-4 dark:text-gray-100">
 				<h2 className=" text-2xl font-semibold leadi text-center mb-10"> My Food Food Request</h2>
 				{
@@ -102,9 +106,9 @@ const MyFoodRequest = () => {
 
 										</td>
                                         <td className="p-3">
-											{request.isDelivered ?<button className="text-green-600 font-bold mr-3">Available</button>
+											{request.isDelivered ?<button className="text-green-600 font-bold mr-3">Delivered</button>
                                             :
-                                            <button className="text-red-600 font-bold">Delivered</button>
+                                            <button className="text-red-600 font-bold">Pending </button>
                                             
 
                                             }

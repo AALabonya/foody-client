@@ -6,6 +6,7 @@ import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const SingleFoodDetails = () => {
   const singleData = useLoaderData()
@@ -60,6 +61,7 @@ const SingleFoodDetails = () => {
 
   return (
       <section className="dark:bg-gray-800 dark:text-gray-100">
+        <Helmet><title>Foody | Food Details</title></Helmet>
         <h1 className="text-center font-bold text-4xl mt-12 mb-5">Donar Name: {singleData.donatorName}</h1>
            <h3 className="text-center font-bold text-2xl">Food Pickup Location :- {singleData.pickupLocation}</h3>
         <div className="container flex flex-col-reverse mx-auto lg:flex-row">

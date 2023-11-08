@@ -6,6 +6,7 @@ import FoodCard from "./FoodCard";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "../../pages/Loading";
 import useAxios from "../../hooks/useAxios";
+import { Helmet } from "react-helmet-async";
 
 
 const AvailableFood = () => {
@@ -36,7 +37,9 @@ const AvailableFood = () => {
 
 
 	return (
-		<div><div className="w-full dark:bg-gray-500 bg-[url('https://i.ibb.co/hML1zzk/fresh-vegetable-salad-with-grilled-chicken-breast-tomatoes-cucumbers-radish-mix-lettuce-leaves-chick.jpg')]">
+		<div>
+			<Helmet><title>Foody | Available Product</title></Helmet>
+			<div className="w-full dark:bg-gray-500 bg-[url('https://i.ibb.co/hML1zzk/fresh-vegetable-salad-with-grilled-chicken-breast-tomatoes-cucumbers-radish-mix-lettuce-leaves-chick.jpg')]">
 			<div className="container flex flex-col flex-wrap content-center justify-center p-4 py-20 mx-auto md:p-10">
 				<h1 className="text-5xl antialiased font-semibold leadi text-center dark:text-gray-100">Get Our Foods</h1>
 				<p className="pt-2 pb-8 text-xl antialiased text-center dark:text-gray-100">Find out Which you want</p>
