@@ -53,7 +53,7 @@ const ManageSingleFood = () => {
 			<div className="container p-2 mx-auto sm:p-4 dark:text-gray-100">
 				<h2 className=" text-2xl font-semibold leadi text-center mb-10"> Manage Single Food</h2>
 				{
-					manageSingleFood.length === 0 && <p>can not request for food</p>
+					manageSingleFood.length === 0 && <p className="text-center text-lg font-bold">any one can not request for food</p>
 				}
 				{
 					manageSingleFood.length > 0 && <div className="overflow-x-auto">

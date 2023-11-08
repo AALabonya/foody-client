@@ -30,7 +30,7 @@ const MyFoodRequest = () => {
                 axios.delete(`/requestCancel/${id}`)
                 .then(res=>{
                     if(res.data.deletedCount > 0){
-                        const filterData =myRequest.filter(request=> request._id == id)
+                        const filterData =myRequest.filter(request=> request._id === id)
                         setMyRequest(filterData)
                         Swal.fire({
                             title: "Delivered!",
@@ -39,7 +39,6 @@ const MyFoodRequest = () => {
                         })
                     }
                 })
-				window.location.reload();
             }
         })
     }
@@ -49,7 +48,7 @@ const MyFoodRequest = () => {
            <div className="container p-2 mx-auto sm:p-4 dark:text-gray-100">
 				<h2 className=" text-2xl font-semibold leadi text-center mb-10"> My Food Food Request</h2>
 				{
-					myRequest.length === 0 && <p>You do not add any food</p>
+					myRequest.length === 0 && <p className="text-center text-lg font-bold">You do not add any food</p>
 				}
 				{
 					myRequest.length > 0 && <div className="overflow-x-auto">
@@ -117,10 +116,10 @@ const MyFoodRequest = () => {
 										<td className="p-3">
 											{
 												myRequest.isDelivered ?
-													<button className="px-3 py-1 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900">Cancel</button>
+													<button className="px-3 py-1 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900">Canceled</button>
 													:
 													<button onClick={() => handleCancel(request._id)} className="px-3 py-1 font-semibold rounded-md dark:bg-violet-400 dark:text-gray-900">
-														cancel
+														Cancel
 													</button>
 											}
 										</td>

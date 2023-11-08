@@ -1,8 +1,13 @@
-# React + Vite
+# Foody 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ ## Writing five points about my project.
+-  My website home is responsive. 
+- I have added Six featured card  and when you click show all button then you saw all available food card.
 
-Currently, two official plugins are available:
+- I have implemented following packages like Lottie-react,Framer-motion
+React Hook Form,React Helmet
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- I am the Environment variable to hide the Firebase config keys and Mongodb
+Credentials
+
+- I have to implemented search functionality by the Food name and also implement Sorting functionality by the Food Expire Date
