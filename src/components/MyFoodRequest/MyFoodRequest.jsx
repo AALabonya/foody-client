@@ -8,13 +8,12 @@ import { Helmet } from "react-helmet-async";
 const MyFoodRequest = () => {
     const{user} = useContext(AuthContext)
     const axios =useAxios()
-    const [myRequest, setMyRequest]=useState(axios)
+    const [myRequest, setMyRequest]=useState([])
 
     useEffect(()=>{
         axios.get(`/getUserRequestFood?email=${user?.email}`)
         .then(res=>setMyRequest(res.data))
     },[axios,user?.email])
-
 
     const handleCancel=(id)=>{
         Swal.fire({
@@ -30,7 +29,7 @@ const MyFoodRequest = () => {
                 axios.delete(`/requestCancel/${id}`)
                 .then(res=>{
                     if(res.data.deletedCount > 0){
-                        const filterData =myRequest.filter(request=> request._id == id)
+                        const filterData =myRequest.filter(request=> request._id !== id)
                            setMyRequest(filterData)
                             Swal.fire({
                             title: "Delivered!",
@@ -38,6 +37,7 @@ const MyFoodRequest = () => {
                             icon: "success"
                         })
                     }
+
                 })
             }
         })

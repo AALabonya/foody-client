@@ -34,7 +34,7 @@ const FoodCard = ({ food }) => {
 					</div>
 					<div>
 						<h1 className="text-xs font-medium">Expire: {expiredDate}</h1>
-						<p className="text-xs font-medium">Quantity: {foodQuantity}</p>
+						<p className="text-xs font-medium">Quantity: For {foodQuantity} persons</p>
 					</div>
 
 
@@ -43,15 +43,15 @@ const FoodCard = ({ food }) => {
 				<div className="p-3">
 					<div className="flex items-center justify-between">
 						<div className="flex items-center space-x-3">
-							<h1>{foodName}</h1>
+							<h1 className="font-bold text-base">{foodName}</h1>
 
 						</div>
 
-						<button type="button" title="Bookmark post" className="flex bg-orange-400 p-1 rounded-lg font-bold items-center justify-center">
+						<button type="button" title="Bookmark post" className="flex bg-orange-400 text-xs p-1 rounded-lg font-bold items-center justify-center">
 							{foodStatus}
 						</button>
 					</div>
-					<div>{additionalNotes}</div>
+					<div className="font-semibold mt-2">{additionalNotes}</div>
 					<div className="flex flex-wrap items-center pt-3 pb-1">
 						<div className="flex items-center space-x-2">
 							<div className="flex -space-x-1">

@@ -1,21 +1,24 @@
 
-import useAxios from "../../hooks/useAxios";
+// import useAxios from "../../hooks/useAxios";
 import FeatureCard from "./FeatureCard";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 const FeaturedFood = () => {
  
-    const axios = useAxios()
-
-    const uri ="/featuredFood"
-const[featuresData, setFeature]= useState()
+    // const axios = useAxios()
+ 
+    // const uri ="/featuredFood"
+const[featuresData, setFeature]= useState([])
 
 useEffect(()=>{
-  axios.get(uri)
-  .then(res=>setFeature(res.data))
-},[axios])
-    
+  axios.get("https://assignment-11-server-site-project.vercel.app/homeFood")
+ .then(res=>{
+setFeature(res.data);
+ })
+},[])
+    console.log(featuresData);
       
     return (
         <div>

@@ -38,7 +38,6 @@ const UpdateTheFood = () => {
     console.log(updateForm);
     axios.patch(`/updateFood/${_id}`, updateForm)
       .then(res => {
-        console.log(res.data)
         if (res.data.modifiedCount > 0) {
           Swal.fire("Updated!", "Your food has been Updated.", "success")
         }

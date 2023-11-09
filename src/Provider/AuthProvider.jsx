@@ -48,29 +48,33 @@ const logOut =()=>{
 //observer 
 useEffect(()=>{
     const unSubscribe = onAuthStateChanged(auth, currentUser => {
-      const userEmail= currentUser?.email || user?.email
-      const loggedUser ={ email: userEmail }
+      const userEmail= {email:currentUser?.email || user?.email}
+      
         setUser(currentUser)
-        console.log("currentUser", currentUser);
         setLoading(false)
+        console.log("currentUser", currentUser);
+        
         //if user exists then issue a token
         if(currentUser){
          
-          axios.post("https://assignment-11-server-site-project.vercel.app/jwt", loggedUser, {withCredentials: true})
+          axios.post("https://assignment-11-server-site-project.vercel.app/jwt", userEmail, {withCredentials: true})
           .then(res =>{
+            if(res.data)
             console.log("token response", res.data);
           })
         }else{
-          axios.post("https://assignment-11-server-site-project.vercel.app/logout", loggedUser, {withCredentials: true})
+          axios.post("https://assignment-11-server-site-project.vercel.app/logout", userEmail, {withCredentials: true})
           .then(res=>{
             console.log("logout", res.data);
           })
         }
+        
     })
     return () => {
-        unSubscribe()
+      return  unSubscribe()
+       
     }
-},[user?.email])
+},[])
 
 const info ={
     user,

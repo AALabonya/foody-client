@@ -31,7 +31,7 @@ const Login = () => {
                             title: "Good job!",
                             text: "You clicked the button!",
                             icon: "success"
-                        }) && navigate(location?.state ? location.state : "/")
+                        }) && navigate("/")
                         
                     )
                 }
