@@ -31,4 +31,10 @@ Credentials.
 - Framer-motion 
 - Lottie-react
 - React Fast Marquee
-- sweetalert2
+- sweetalert2 
+- Express JS
+- MongoDB
+- Firebase 
+- Netlify
+- Vercel
+
