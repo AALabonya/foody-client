@@ -29,6 +29,7 @@ Credentials.
 - React Hook Form
 - React Helmet
 - Framer-motion 
+- Swiper js
 - Lottie-react
 - React Fast Marquee
 - sweetalert2 
