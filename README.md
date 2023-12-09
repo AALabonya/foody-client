@@ -1,10 +1,10 @@
 # Foody 
  Foody is a community food sharing website. You can share your food or request food for people.
 ## Project live link - https://ubiquitous-macaron-fb7f2b.netlify.app/
- ## Writing five points about my project.
+ ## Features of my project.
 -  My website home is responsive. 
 - I have added Six featured card  and when you click show all button then you saw all available food card.
-
+- User Authentication and Authorization.
 - I have implemented following packages like Lottie-react,Framer-motion
 React Hook Form,React Helmet
 
