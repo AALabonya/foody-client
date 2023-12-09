@@ -12,3 +12,10 @@ React Hook Form,React Helmet.
 Credentials.
 
 - I have to implemented search functionality by the Food name and also implement Sorting functionality by the Food Expire Date.
+
+# Technology I used:
+- React 
+- Tailwind CSS
+- Mamba UI 
+- React Router Dom
+- React Icon
