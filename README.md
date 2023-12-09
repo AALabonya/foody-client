@@ -1,6 +1,10 @@
 # Foody 
- Foody is a community food sharing website. You can share your food or request food for people.
-## Project live link - https://ubiquitous-macaron-fb7f2b.netlify.app/
+#### Foody is a community food sharing website. You can share your food or request food for people.
+
+- [Project live link (Netlify)](https://ubiquitous-macaron-fb7f2b.netlify.app/)
+- [Client Site Repo](https://github.com/AALabonya/foody-client)
+- [Server Site Repo](https://github.com/AALabonya/foody-server)
+
  ## Features of my project.
 
 - My website home is responsive. 
